@@ -1,0 +1,92 @@
+@import '../../common/charts';
+
+:host {
+    position: relative;
+
+    text {
+        font-family: var(--font-family-base, 'Source Sans Pro');
+    }
+    .container {
+        &__svg {
+            width: 100%;
+        }
+    }
+    .path {
+        stroke: var(--color-brand-primary-base, #307fe2);
+        fill: none;
+        stroke-width: 2;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+        pointer-events: none;
+    }
+
+    .axis {
+        stroke: var(--color-border-dark, #bdbdbd);
+        stroke-width: 1;
+    }
+
+    .grid-lines {
+        stroke: var(--color-border-light, #eee);
+    }
+
+    .mouse-line {
+        pointer-events: none;
+        stroke: var(--color-font-tertiary, #e0e0e0);
+        stroke-dasharray: 4;
+    }
+
+    .ticks {
+        fill: var(--color-font-tertiary, #757575);
+    }
+
+    .tick-line {
+        stroke: var(--color-font-tertiary, #757575);
+        stroke-width: 2px;
+    }
+    .tooltip-container {
+        position: absolute;
+        margin-left: -4rem;
+        min-width: 8rem;
+    }
+
+    .tooltip {
+        &__value {
+            font-weight: bold;
+            font-size: var(--size-font-large, 1.25rem);
+        }
+    }
+
+    .legend {
+        display: flex;
+        align-items: center;
+
+        &__item {
+            display: flex;
+            align-items: center;
+        }
+
+        &__circle {
+            border-radius: 50%;
+            height: var(--size-font-small, 0.75rem);
+            width: var(--size-font-small, 0.75rem);
+            margin-right: var(--size-padding-small, 0.5rem);
+        }
+
+        &__name {
+            display: flex;
+            align-items: center;
+            margin-right: var(--size-padding-large, 2rem);
+            font-weight: 600;
+        }
+    }
+
+    .marker {
+        stroke: var(--color-base-white, #fff);
+        stroke-width: 2px;
+        @include chart-colors-fill;
+    }
+
+    .color {
+        @include chart-colors-stroke;
+    }
+}
